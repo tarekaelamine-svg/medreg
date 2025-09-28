@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coming Soon</title>
+  <meta name="description" content="This site is coming soon." />
+  <style>
+    :root { --bg:#0f172a; --fg:#e2e8f0; --accent:#38bdf8; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(1200px 600px at 50% 0%, #111827 10%, var(--bg) 60%);
+      color: var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      padding: 24px;
+    }
+    .card {
+      width: 100%; max-width: 720px; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.25);
+      text-align: center;
+    }
+    .icon { font-size: 48px; line-height: 1; }
+    h1 { margin: 12px 0 8px; font-weight: 700; font-size: 28px; }
+    p { margin: 0 0 18px; opacity: .9; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    input[type="email"] {
+      flex: 1 1 240px; min-width: 220px; padding: 12px 14px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.25); color: var(--fg);
+      outline: none;
+    }
+    button {
+      padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, #1e293b, #0b1220); color: var(--fg); cursor: pointer;
+    }
+    .foot { margin-top: 18px; font-size: 13px; opacity: .7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="icon" aria-hidden="true">🚧</div>
+    <h1>Under Construction</h1>
+    <p>We're building something new here. Check back soon.</p>
+
+    <!-- Optional email capture (sends a mailto: by default; swap for your provider later) -->
+    <form class="row" action="mailto:hello@YOURDOMAIN.COM" method="post" enctype="text/plain">
+      <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <div class="foot">
+      <span>© <span id="year"></span> YOURDOMAIN.COM</span>
+      &nbsp;·&nbsp;
+      <a href="mailto:hello@YOURDOMAIN.COM">Contact</a>
+    </div>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
